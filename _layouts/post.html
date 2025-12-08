@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<article class="post-container">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-meta">
+            <span class="date">{{ page.date | date: "%B %-d, %Y" }}</span>
+            {% if page.categories %}
+            <span class="categories">
+                in {% for category in page.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+            </span>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+</article>
+
+<style>
+    .post-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .post-header {
+        margin-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 1rem;
+    }
+    
+    .post-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #fff;
+    }
+    
+    .post-meta {
+        font-family: var(--font-mono);
+        color: #888;
+        font-size: 0.9rem;
+    }
+    
+    .post-content {
+        font-size: 1.1rem;
+        color: #ddd;
+    }
+    
+    .post-content h2, .post-content h3 {
+        color: #fff;
+        margin-top: 2rem;
+    }
+    
+    .post-content a {
+        text-decoration: underline;
+        text-decoration-color: var(--accent-color);
+    }
+    
+    .post-content code {
+        background: var(--code-bg);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: var(--font-mono);
+        font-size: 0.9em;
+        color: var(--accent-color);
+    }
+    
+    .post-content pre {
+        background: var(--code-bg);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .post-content pre code {
+        background: none;
+        padding: 0;
+        color: #ccc;
+    }
+</style>

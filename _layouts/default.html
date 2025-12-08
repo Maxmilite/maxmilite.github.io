@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    {% seo %}
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <nav>
+                <a href="{{ "/" | relative_url }}" class="site-title">
+                    ~/maxmilite<span class="cursor"></span>
+                </a>
+                <div class="nav-links">
+                    <a href="{{ "/" | relative_url }}">Home</a>
+                    <a href="{{ "/publications" | relative_url }}">Publications</a>
+                    <a href="{{ "/projects" | relative_url }}">Projects</a>
+                    <a href="{{ "/blog" | relative_url }}">Blog</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            {{ content }}
+        </main>
+
+        <footer>
+            <p>&copy; {{ site.time | date: '%Y' }} Fei Yu. Built with Jekyll and Google Gemini within 15 minutes.</p>
+            <p>
+                <a href="https://github.com/{{ site.github_username }}">GitHub</a> • 
+                <a href="mailto:{{ site.email }}">Email</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
