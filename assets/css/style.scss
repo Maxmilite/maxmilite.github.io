@@ -98,6 +98,7 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
+  padding: 4rem 0;
 
   @media (max-width: 768px) {
     flex-direction: column-reverse;
