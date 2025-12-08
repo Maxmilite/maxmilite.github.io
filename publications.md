@@ -13,34 +13,34 @@ permalink: /publications/
         <div class="publication-item">
             <div class="pub-year">2025</div>
             <div class="pub-content">
-                <h3><a href="#">Title of the Paper: A Very Cool 3D Vision Method</a></h3>
+                <h3><a href="#">TBD</a></h3>
                 <div class="authors">
-                    <strong>Fei Yu</strong>, Co-author Name, Advisor Name
+                    TBD
                 </div>
                 <div class="venue">
-                    Conference on Computer Vision and Pattern Recognition (CVPR), 2025
+                    Preprint.
                 </div>
                 <div class="links">
                     <a href="#" class="link-btn">[PDF]</a>
-                    <a href="#" class="link-btn">[Code]</a>
                     <a href="#" class="link-btn">[Project Page]</a>
                 </div>
             </div>
         </div>
 
         <div class="publication-item">
-            <div class="pub-year">2024</div>
+            <div class="pub-year">2025</div>
             <div class="pub-content">
-                <h3><a href="#">Another Interesting Research on Generative Models</a></h3>
+                <h3><a href="#">Recovering 3D Shapes from Motion Blurred Images</a></h3>
                 <div class="authors">
-                    Co-author Name, <strong>Fei Yu</strong>, Advisor Name
+                    <strong>Fei Yu</strong>, Shudan Guo, Shiqing Xin, Beibei Wang, Wenzheng Chen, Haisen Zhao
                 </div>
                 <div class="venue">
-                    International Conference on Computer Vision (ICCV), 2024
+                    International Conference on 3D Vision (3DV), 2026
                 </div>
                 <div class="links">
                     <a href="#" class="link-btn">[PDF]</a>
                     <a href="#" class="link-btn">[Code]</a>
+                    <a href="#" class="link-btn">[Project Page]</a>
                 </div>
             </div>
         </div>
