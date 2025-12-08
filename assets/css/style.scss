@@ -35,7 +35,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-mono);
+  font-family: var(--font-main);
   color: #fff;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
@@ -59,7 +59,7 @@ header {
     align-items: center;
     
     .site-title {
-      font-family: var(--font-mono);
+      font-family: var(--font-main);
       font-size: 1.5rem;
       font-weight: bold;
       color: #fff;
@@ -78,7 +78,7 @@ header {
     .nav-links {
       a {
         margin-left: 20px;
-        font-family: var(--font-mono);
+        font-family: var(--font-main);
         font-size: 0.9rem;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -95,6 +95,16 @@ header {
 /* Hero Section */
 .hero {
   padding: 4rem 0;
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+  }
   
   h1 {
     font-size: 3rem;
@@ -107,7 +117,7 @@ header {
   .subtitle {
     font-size: 1.2rem;
     color: #aaa;
-    font-family: var(--font-mono);
+    font-family: var(--font-main);
     margin-bottom: 2rem;
   }
   
@@ -161,7 +171,7 @@ header {
     
     span {
       font-size: 0.75rem;
-      font-family: var(--font-mono);
+      font-family: var(--font-main);
       background: rgba(0, 243, 255, 0.1);
       color: var(--accent-color);
       padding: 2px 8px;
@@ -176,7 +186,7 @@ footer {
   padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
-  font-family: var(--font-mono);
+  font-family: var(--font-main);
   font-size: 0.8rem;
   color: #666;
 }
@@ -193,7 +203,7 @@ footer {
   padding: 10px 20px;
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
-  font-family: var(--font-mono);
+  font-family: var(--font-main);
   border-radius: 4px;
   margin-right: 10px;
   

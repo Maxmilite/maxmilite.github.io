@@ -4,6 +4,15 @@ title: Home
 ---
 
 <section class="hero">
+
+    <img src="assets/avatar.jpg" alt="Fei Yu" class="avatar">
+    <h2>Fei Yu</h2>
+
+    <div class="subtitle">
+        > Final-year Undergrad @ Shandong University <br>
+        > Research Intern @ Peking University & AMAP (Alibaba Group)
+    </div>
+
     <div class="bio">
         <p>
             I am a researcher and developer passionate about <strong>Computer Graphics</strong> and <strong>3D Vision</strong>. 
@@ -14,11 +23,6 @@ title: Home
         </p>
     </div>
 
-    <div class="subtitle">
-        > Final-year Undergrad @ Shandong University <br>
-        > Research Intern @ Peking University & AMAP (Alibaba Group)
-    </div>
-    
     <div class="actions">
         <a href="mailto:yufe008@live.com" class="btn">Contact Me</a>
         <a href="https://github.com/maxmilite" class="btn">GitHub Profile</a>

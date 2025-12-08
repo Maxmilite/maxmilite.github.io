@@ -54,13 +54,15 @@ permalink: /about/
     .timeline-item {
         display: flex;
         margin-bottom: 1.5rem;
+        gap: 20px;
     }
     
     .timeline-item .time {
         min-width: 120px;
-        font-family: var(--font-mono);
+        font-family: var(--font-main);
         color: var(--accent-color);
         padding-top: 5px;
+        flex-shrink: 0;
     }
     
     .timeline-item .content h3 {
