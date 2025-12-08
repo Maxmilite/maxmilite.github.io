@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<section class="hero">
+<div class="container">
     <h1 class="page-title">About Me</h1>
     
     <section class="about-section">
@@ -43,7 +43,7 @@ permalink: /about/
             </div>
         </div>
     </section>
-<section class="hero">
+</div>
 
 <style>
     .about-section {

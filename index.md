@@ -6,7 +6,7 @@ title: Home
 <section class="hero">
 
     <div class="hero-text">
-        <h2>Fei Yu</h2>
+        <h1>Fei Yu</h1>
 
         <div class="subtitle">
             > Final-year Undergrad @ Shandong University <br>
