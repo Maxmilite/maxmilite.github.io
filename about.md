@@ -4,15 +4,14 @@ title: About
 permalink: /about/
 ---
 
-<div class="container">
+<section class="hero">
     <h1 class="page-title">About Me</h1>
     
     <section class="about-section">
         <h2>Biography</h2>
         <p>
-            I am currently a final-year undergraduate student at <strong>Shandong University</strong>. 
-            My research journey has led me to intern at <strong>Peking University</strong> and <strong>AMAP (Alibaba Group)</strong>, 
-            where I work on cutting-edge problems in computer vision and graphics.
+            I am currently a final-year undergraduate student at <strong>Shandong University</strong>, and a research intern at <strong>Peking University</strong> and <strong>AMAP (Alibaba Group)</strong>, fortunately supervised by <a href="https://haisenzhao.github.io/">Prof. Haisen Zhao</a> and <a href="https://wenzhengchen.github.io/">Prof. Wenzheng Chen</a>.
+            I'm working on cutting-edge problems in computer vision and graphics.
         </p>
     </section>
 
@@ -37,14 +36,14 @@ permalink: /about/
             </div>
         </div>
         <div class="timeline-item">
-            <div class="time">2024 - Present</div>
+            <div class="time">2024.08 - Present</div>
             <div class="content">
                 <h3>Peking University</h3>
                 <p>Research Intern</p>
             </div>
         </div>
     </section>
-</div>
+<section class="hero">
 
 <style>
     .about-section {

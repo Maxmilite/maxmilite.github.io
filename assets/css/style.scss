@@ -95,15 +95,38 @@ header {
 /* Hero Section */
 .hero {
   padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    text-align: center;
+    
+    .bio {
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
+
+  .hero-text {
+    flex: 1;
+  }
 
   .avatar {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent-color);
-    margin-bottom: 1rem;
     box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05) rotate(5deg);
+    }
   }
   
   h1 {
@@ -115,7 +138,7 @@ header {
   }
   
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #aaa;
     font-family: var(--font-main);
     margin-bottom: 2rem;
