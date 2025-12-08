@@ -94,7 +94,6 @@ header {
 
 /* Hero Section */
 .hero {
-  padding: 4rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,6 +134,7 @@ header {
     background: linear-gradient(90deg, #fff, var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 0 0;
   }
   
   .subtitle {
