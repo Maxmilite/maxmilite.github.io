@@ -13,16 +13,16 @@ permalink: /publications/
         <div class="publication-item">
             <div class="pub-year">2025</div>
             <div class="pub-content">
-                <h3><a href="#">TBD</a></h3>
+                <h3><a href="#">From Orbit to Ground: Generative City Photogrammetry from Extreme Off-Nadir Satellite Images</a></h3>
                 <div class="authors">
-                    TBD
+                    <strong>Fei Yu</strong><sup>*</sup>, Yu Liu<sup>*</sup>, Luyang Tang, Mingchao Sun, Zengye Ge, Rui Bu, Yuchao Jin, Haisen Zhao, He Sun, Yangyan Li, Mu Xu, Wenzheng Chen, Baoquan Chen
                 </div>
                 <div class="venue">
                     Preprint.
                 </div>
                 <div class="links">
-                    <a href="#" class="link-btn">[PDF]</a>
-                    <a href="#" class="link-btn">[Project Page]</a>
+                    <a href="https://pku-vcl-geometry.github.io/Orbit2Ground/static/paper.pdf" class="link-btn">[PDF]</a>
+                    <a href="https://pku-vcl-geometry.github.io/Orbit2Ground/" class="link-btn">[Project Page]</a>
                 </div>
             </div>
         </div>
