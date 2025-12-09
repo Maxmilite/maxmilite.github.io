@@ -33,9 +33,9 @@ title: Home
 </section>
 
 <section>
-    <h2 class="section-title">Latest Updates</h2>
+    <h2 class="section-title">Updates</h2>
     <ul>
         <li><strong>[2025-11]</strong> One paper accepted by 3DV 2026.</li>
-        <li><strong>[2025-10]</strong> Started Research Internship at AMAP, Alibaba Group.</li>
+        <li><strong>[2025-10]</strong> Started research internship at AMAP, Alibaba Group.</li>
     </ul>
 </section>

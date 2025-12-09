@@ -21,7 +21,7 @@ permalink: /publications/
                     Preprint.
                 </div>
                 <div class="links">
-                    <a href="https://pku-vcl-geometry.github.io/Orbit2Ground/static/paper.pdf" class="link-btn">[PDF]</a>
+                    <a href="https://arxiv.org/pdf/2512.07527" class="link-btn">[PDF]</a>
                     <a href="https://pku-vcl-geometry.github.io/Orbit2Ground/" class="link-btn">[Project Page]</a>
                 </div>
             </div>
@@ -30,7 +30,7 @@ permalink: /publications/
         <div class="publication-item">
             <div class="pub-year">2025</div>
             <div class="pub-content">
-                <h3><a href="#">Recovering 3D Shapes from Motion Blurred Images</a></h3>
+                <h3><a href="#">Recovering 3D Shapes from Ultra-Fast Motion-Blurred Images</a></h3>
                 <div class="authors">
                     <strong>Fei Yu</strong>, Shudan Guo, Shiqing Xin, Beibei Wang, Wenzheng Chen, Haisen Zhao
                 </div>
