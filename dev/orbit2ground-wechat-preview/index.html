@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北大、高德联合出品 | 仅凭几张卫星图，即可重建出照片级3D都市</title>
+    <style>
+        /* 全局重置 */
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            text-align: justify; /* 两端对齐，符合公众号习惯 */
+        }
+
+        /* 公众号容器模拟 */
+        .container {
+            max-width: 677px; /* 微信文章最大宽度 */
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 24px 16px;
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 14px;
+            color: #333;
+        }
+
+        /* 顶部元信息 */
+        .meta-info {
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.3);
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .meta-info span {
+            margin-right: 10px;
+        }
+
+        .meta-author {
+            color: #576b95; /* 微信链接色 */
+            font-weight: 500;
+        }
+
+        /* 正文段落 */
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            color: #333;
+        }
+
+        /* 强调文字 */
+        strong, b {
+            font-weight: 700;
+            color: #333; /* 保持深色，部分重点可用颜色 */
+        }
+
+        /* 摘要加粗段落特殊处理 */
+        .intro-bold {
+            font-weight: 700;
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* 引用块 */
+        .blockquote {
+            background-color: #f7f7f7;
+            border-left: 4px solid #07c160; /* 微信绿或科技蓝 */
+            padding: 12px 10px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* 二级标题 H2 */
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* 居中标题风格 */
+        }
+
+        /* 模拟一种常见的公众号居中标题装饰 */
+        h2 span {
+            border-bottom: 2px solid #0052d9;
+            padding-bottom: 8px;
+        }
+        
+        /* 或者保持左侧带标的风格 (你之前的风格) */
+        .section-title {
+            border-left: 5px solid #0052d9;
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: left;
+            display: block;
+        }
+
+        /* 三级标题 H3 */
+        h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            color: #0052d9;
+            text-align: center;
+        }
+
+        /* 图片与视频 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 6px;
+        }
+
+        .video-container {
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #000;
+            position: relative;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            max-height: 400px; /* 防止竖屏视频过高 */
+        }
+
+        .caption {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        /* 表格样式优化 */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            min-width: 300px;
+        }
+
+        th, td {
+            padding: 10px 6px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        th {
+            background-color: #fafafa;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* 突出显示 Ours 行 */
+        .highlight-row {
+            background-color: #e6f7ff !important; /* 浅蓝背景 */
+            font-weight: bold;
+            color: #0052d9;
+        }
+
+        /* 论文信息框 */
+        .paper-info {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-top: 50px;
+            color: #555;
+            border: 1px dashed #ddd;
+        }
+        
+        .paper-info p {
+            margin-bottom: 12px;
+            font-size: 14px;
+            word-break: break-all; /* 防止长链接撑破容器 */
+        }
+
+        .paper-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .paper-info a {
+            color: #576b95;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>北大、高德联合出品 | 仅凭几张卫星图，即可重建出照片级3D都市</h1>
+
+    <div class="meta-info">
+        <span class="meta-author">机器之心</span>
+        <span>2025-12-15</span>
+        <span class="meta-author">北大高德联合团队</span>
+    </div>
+
+    <div class="intro-bold">
+        本研究由北京大学、高德地图研究团队联合完成。通讯作者包括北京大学博雅特聘教授、IEEE Fellow、中国计算机学会计算机图形学专委会主任陈宝权，北京大学助理教授陈文拯，以及高德地图徐牧。
+    </div>
+
+    <p>试想一下，如果我们要为下一代 3A 大作（如《GTA 6》）构建一个 1:1 的纽约城，或者为城市级无人机送货系统规划一条在摩天大楼间穿梭的低空物流航线，甚至是为特大城市的应急响应系统构建一个毫厘毕现的数字底座。</p>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="./static/videos/1.mp4" type="video/mp4">
+            您的浏览器不支持 video 标签。
+        </video>
+    </div>
+
+    <p>通常，这需要数千人的美术团队耗时数年手工建模，或者动用昂贵的机群进行倾斜摄影扫街。 如何低成本、高效率地将庞大的“实体都市”复刻进数字空间，一直是计算机图形学与视觉领域试图攻克的终极难题。</p>
+
+    <p>最理想的数据源是卫星影像——它覆盖全球，唾手可得。但利用卫星图重建城市，长期以来被视为一个“不可能完成的任务”。</p>
+
+    <p>核心矛盾在于视角的巨大差异：卫星高悬于万米高空，以近乎垂直的俯视角度拍摄，而我们需要的，却是地面视角下依然细节丰富、结构完整的3D城市。这种视角的极端外推（从顶视图推导侧视图），让目前最先进的 NeRF 和 3D Gaussian Splatting (3DGS) 也显得力不从心：建筑立面的几何空心与坍塌，导致渲染出的新视角一塌糊涂。一旦镜头拉近到地面，摩天大楼就会变成扭曲的“融化蜡像”，纹理更是一团模糊。</p>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="./static/videos/2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <p>为了打破这一僵局，北大与高德团队提出了一种全新的生成式摄影测量方案 <strong>"Orbit2Ground"</strong>。它巧妙地结合了城市几何先验与生成式AI，仅凭稀疏的卫星图像，就构建出了令人惊叹的3D都市细节。</p>
+
+    <img src="./static/images/1.png" alt="Orbit2Ground 概念图">
+    <div class="video-container">
+        <video controls playsinline>
+            <source src="./static/videos/teaser.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <ul>
+        <li><strong>论文标题：</strong>From Orbit to Ground: Generative City Photogrammetry from Extreme Off-Nadir Satellite Images</li>
+        <li><strong>项目主页：</strong><a href="https://pku-vel-geometry.github.io/Orbit2Ground/">https://pku-vel-geometry.github.io/Orbit2Ground/</a></li>
+        <li><strong>ArXiv：</strong><a href="https://arxiv.org/pdf/2512.07527">https://arxiv.org/pdf/2512.07527</a></li>
+    </ul>
+
+    <h3>几何革新：SDF 单调性约束，强制“长”出垂直墙壁</h3>
+
+    <p>
+        卫星图可以为屋顶形成良好的多视角立体视觉，但很难捕捉到建筑侧面的视差信息，这导致传统算法虽然能恢复出清晰的屋顶，但一处理侧面就会遭遇严重的几何崩塌——墙面支离破碎，充满悬浮的碎片。
+    </p>
+
+    
+    <img src="./static/images/2.png" alt="mvs">
+    <div class="caption">与常规的街景重建不同，卫星图像稀疏且非正视视角，无法捕捉垂直结构的视差。如图所示，多视角重建（黄色点）仅能恢复地面和屋顶，无法重建立面。</div>
+
+    <p>
+        为了补足缺失的侧面几何，团队利用了一个关键观察：绝大多数城市建筑的墙壁都是垂直挺拔的，极少出现凹凸不规则的曲面。
+    </p>
+    
+    <p>基于此，团队提出了 <strong>Z-Monotonic SDF (Z轴单调符号距离场)</strong>。其核心逻辑在于：约束 SDF 场在 Z 轴方向上单调递增。</p>
+
+    <img src="./static/images/3.png" alt="Z-Monotonic SDF 原理">
+    <div class="caption">
+        有建筑外立面的 SDF 场中，任意选取平面一条竖线，其上所有点的 SDF 值，沿高度向上单调递增。
+    </div>
+   
+    <p>
+        这一数学约束的设计直接决定了最终的几何形态——因为 SDF 场的单调性，强制要求其生成的等值面（即几何表面）必须是连续且非凹陷的。这意味着，几何体不允许在中间断开、破碎或是向内塌陷。        
+    </p>
+
+    <p>
+        正是这种“SDF单调 → 几何非凹”的强力约束，使得算法即便在仅有顶部观测数据的情况下，也能自动从屋顶向下“拉伸”出连续、闭合且垂直的完整墙壁，彻底根治了传统方法中“空心楼”和“几何破碎”的顽疾。
+    </p>
+
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="./static/videos/3.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <h3>外观革新：AI“精装修”</h3>
+
+    <p>有了挺拔的“毛坯房”，下一步是解决纹理模糊的问题。</p>
+    
+    <p>由于大气干扰和分辨率限制，卫星拍摄的侧面纹理往往不够清晰。为了解决这个问题，团队基于强大的 FLUX 基础模型，训练了一个专门的确定性纹理修复网络作为“AI 装修队”。他们并没有让 AI 凭空捏造，而是让它基于卫星图提供的基础色调和结构，利用学习到的海量城市外观知识，对模糊的立面进行确定性修复。</p>
+    
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="./static/videos/4.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <p>通过将扩散模型微调为“确定性”模式，确保了在不同视角下生成的纹理是连贯统一的，避免了生成式 AI 常见的由随机性导致的“鬼影、模糊”等问题。</p>
+
+    <h3>整体流程：先几何，后外观</h3>
+
+    <img src="./static/images/4.png" alt="Pipeline 流程图">
+
+    <p>Orbit2Ground 将复杂的重建任务解耦为几何与外观两个阶段：</p>
+
+    <ul>
+
+    <li>
+        <strong>第一阶段（几何重建）：</strong>我们基于稀疏的 MVS 点云优化 <strong>Z-Monotonic SDF（Z轴单调符号距离场）</strong>，从而提取出具有干净垂直立面的高保真 Mesh 几何。
+    </li>
+
+    <li>
+        <strong>第二阶段（外观精修）：</strong>以初始纹理（由卫星图像反向投影得到）为起点，我们利用修复网络增强近距离新视角的渲染效果，进而将其作为清晰、高保真的监督信号，用于最终的纹理优化。
+    </li>
+
+    </ul>
+
+    <h3>方法效果：超越 SOTA 的视觉震撼</h3>
+
+    <p>
+        在 MatrixCity-Satellite、DFC 2019、Google Earth 等多个数据集的测试中，Orbit2Ground 展现了惊人的效果。
+    </p>
+    <p>
+        在几何精度上，它生成的模型不再有“悬浮碎片”或“坍塌墙面”；在视觉质量上，其 PSNR、SSIM 和 LPIPS 三项核心指标全面超越了 Mip-Splatting、2DGS 以及专门针对大场景设计的 CityGS-X 和 Skyfall-GS 等顶尖 (SOTA) 方法。
+    </p>
+
+
+    <img src="./static/images/5.png" alt="quantitative results">
+
+    <p>更令人兴奋的是，Orbit2Ground 展现了碾压级的视觉效果：</p>
+    
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="./static/videos/5.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <p>
+        当其他方法在缺乏数据的区域产生云雾状的伪影时，Orbit2Ground 生成的是坚实、连贯的物理表面。在近距离的地面视角下，建筑立面的纹理清晰可辨，极大地提升了画面的真实感与沉浸感。
+    </p>
+
+    <p>此外，与目前流行的 NeRF 或 3DGS 等“云雾状”的表达不同，Orbit2Ground 最终输出的是<strong>标准的 Mesh (网格) 模型</strong>。</p>
+    
+    <p>这意味着什么？意味着这套资产不是只能看、不能碰的“全息影像”，而是可以直接导入 Unity、Unreal Engine 5 等主流引擎的实体资产。</p>
+
+    <img src="./static/images/6.png" alt="Mesh 模型展示">
+
+    <p>开发者可以直接在这些模型上添加刚体碰撞、进行物理模拟（如积雪堆积、洪水淹没），或者进行光照渲染。这意味着我们拥有了一种低成本方案，能够生成不仅“看得清”，而且真正“用得上”的城市级数字资产。</p>
+
+    <p style="text-align: center; font-weight: bold; color: #0052d9; margin-top: 40px; margin-bottom: 40px; font-size: 17px;">
+        未来，也许我们真的只需要几颗卫星，<br>就能在数字世界中实时复刻一个鲜活的地球。
+    </p>
+
+</div>
+
+</body>
+</html>
