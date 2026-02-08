@@ -94,7 +94,7 @@ permalink: /publications/
 
     .pub-teaser {
         flex-shrink: 0;
-        width: 50%;
+        width: 30%;
         border-radius: 12px;
         overflow: hidden;
         background: rgba(15, 23, 42, 0.5);
