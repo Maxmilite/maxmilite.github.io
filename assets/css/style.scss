@@ -35,7 +35,7 @@ body {
   height: 100%;
   z-index: -1;
   overflow: hidden;
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
 }
 
 .gradient-orb {
@@ -105,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  max-width: 900px;
+  max-width: max(1200px, 85%);
   margin: 0 auto;
   padding: 20px;
   position: relative;
@@ -170,7 +170,7 @@ main {
   -webkit-backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 3rem 2.5rem;
-  border: 1px solid rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   margin-bottom: 2rem;
 
@@ -251,14 +251,14 @@ main {
   background: rgba(30, 41, 59, 0.4);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   padding: 1.5rem;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
     border-color: var(--accent-color);
     background: rgba(30, 41, 59, 0.6);
 
@@ -329,7 +329,7 @@ footer {
   &:hover {
     background: rgba(0, 243, 255, 0.1);
     text-decoration: none;
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
   }
 }
 
