@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-<section class="hero">
+<section class="hero" style="padding: 4rem">
 
     <div class="hero-text">
         <h1>Fei Yu</h1>
