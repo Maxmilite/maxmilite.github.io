@@ -38,9 +38,9 @@ permalink: /publications/
                     International Conference on 3D Vision (3DV), 2026
                 </div>
                 <div class="links">
-                    <a href="#" class="link-btn">[PDF]</a>
-                    <a href="#" class="link-btn">[Code]</a>
-                    <a href="#" class="link-btn">[Project Page]</a>
+                    <a href="https://maxmilite.github.io/rec-from-ultrafast-blur/static/paper.pdf" class="link-btn">[PDF]</a>
+                    <a href="https://github.com/Maxmilite/rec-from-ultrafast-blur/" class="link-btn">[Code (Coming Soon)]</a>
+                    <a href="https://maxmilite.github.io/rec-from-ultrafast-blur/" class="link-btn">[Project Page]</a>
                 </div>
             </div>
         </div>
