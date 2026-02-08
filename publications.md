@@ -32,7 +32,7 @@ permalink: /publications/
             <div class="pub-content">
                 <h3><a href="#">Recovering 3D Shapes from Ultra-Fast Motion-Blurred Images</a></h3>
                 <div class="authors">
-                    <strong>Fei Yu</strong>, Shudan Guo, Shiqing Xin, Beibei Wang, Wenzheng Chen, Haisen Zhao
+                    <strong>Fei Yu</strong>, Shudan Guo, Shiqing Xin, Beibei Wang, Haisen Zhao, Wenzheng Chen
                 </div>
                 <div class="venue">
                     International Conference on 3D Vision (3DV), 2026
