@@ -149,6 +149,23 @@
             position: relative;
         }
 
+        .gif-container {
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 6px;
+            overflow: hidden;
+            background: transparent;
+            position: relative;
+        }
+
+        .gif-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+            border-radius: 0;
+        }
+
         video {
             width: 100%;
             display: block;
@@ -240,10 +257,8 @@
 
     <p>试想一下，无论是为下一代 3A 大作（如《GTA 6》）构建一个 1:1 的纽约城，还是为城市级无人机送货系统规划一条在摩天大楼间穿梭的低空物流航线，甚至是为特大城市的应急响应系统构建一个毫厘毕现的数字底座，高精度的逼真 3D 城市模型都是关键。</p>
 
-    <div class="video-container">
-        <video autoplay muted loop playsinline>
-            <source src="./static/videos/1.mp4" type="video/mp4">
-        </video>
+    <div class="gif-container">
+        <img src="./static/videos/1.gif" alt="城市重建效果演示 1">
     </div>
 
     <p>通常，构建一座这样的 3D 城市模型需要数千人的美术团队耗时数年手工建模，或者动用昂贵的专业设备进行扫描。如何低成本、高效率地将庞大的“实体都市”复刻进数字空间，一直是计算机图形学与 3D 视觉领域试图攻克的终极难题。</p>
@@ -254,10 +269,8 @@
         这种从“顶视图”推理“侧视图”的<b>视角极端外推</b>，让现有先进方法如 NeRF 和 3DGS 都难以应对，重建出的建筑侧立面常常几何扭曲、纹理模糊。
     </p>
 
-    <div class="video-container">
-        <video autoplay muted loop playsinline>
-            <source src="./static/videos/2.mp4" type="video/mp4">
-        </video>
+    <div class="gif-container">
+        <img src="./static/videos/2.gif" alt="城市重建效果演示 2">
     </div>
     <div class="caption">SOTA 城市重建方法（CityGS-X）在卫星场景下，可以重建出良好的城市屋顶几何和自顶向下视角，但难以重建城市建筑侧立面，在近地视角产生严重的伪影。</div>
 
@@ -306,10 +319,8 @@
     </p>
 
 
-    <div class="video-container">
-        <video autoplay muted loop playsinline>
-            <source src="./static/videos/3.mp4" type="video/mp4">
-        </video>
+    <div class="gif-container">
+        <img src="./static/videos/3.gif" alt="几何重建效果演示">
     </div>
 
     <h3>AI“精装修”，变模糊为高清</h3>
@@ -318,10 +329,8 @@
     
     <p>由于大气干扰和分辨率限制，卫星拍摄的侧面纹理往往不够清晰。为了解决这个问题，团队基于 FLUX 模型，训练了一个专门的<b>确定性纹理修复网络</b>。他们并没有让 AI 凭空捏造，而是让它基于卫星图提供的基础色调和结构，利用学习到的海量城市外观知识，对模糊的立面进行确定性修复。</p>
     
-    <div class="video-container">
-        <video autoplay muted loop playsinline>
-            <source src="./static/videos/4.mp4" type="video/mp4">
-        </video>
+    <div class="gif-container">
+        <img src="./static/videos/4.gif" alt="纹理修复效果演示">
     </div>
     
     <p>通过将扩散模型微调为“确定性”模式，确保了在不同视角下生成的纹理是连贯统一的，避免了生成式 AI 常见的由随机性导致的鬼影、模糊等问题。</p>
@@ -356,10 +365,8 @@
     <p>更重要的是，Orbit2Ground 展现了<b>碾压级的视觉效果</b>：</p>
     
 
-    <div class="video-container">
-        <video autoplay muted loop playsinline>
-            <source src="./static/videos/5.mp4" type="video/mp4">
-        </video>
+    <div class="gif-container">
+        <img src="./static/videos/5.gif" alt="最终效果对比演示">
     </div>
 
     <p>
