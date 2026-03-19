@@ -59,6 +59,12 @@ permalink: /publications/
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="publication-item">
+        <div class="pub-teaser">
+                <img class="pub-teaser-bg" src="/assets/teasers/2025-wiresculptor.png" alt="">
+                <img class="pub-teaser-fg" src="/assets/teasers/2025-wiresculptor.png" alt="">
+            </div>
             <div class="pub-details">
                 <div class="pub-year">2025</div>
                 <div class="pub-content">
