@@ -1,0 +1,26 @@
+title: Fei Yu | Maxmilite
+email: yufe008@live.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Personal academic and developer homepage of Fei Yu (Maxmilite).
+  Researching Computer Graphics and 3D Vision.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://maxmilite.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: 
+github_username: maxmilite
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
