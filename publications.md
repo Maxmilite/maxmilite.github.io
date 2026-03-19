@@ -12,7 +12,10 @@ permalink: /publications/
         <!-- Example Publication Entry -->
         <div class="publication-item">
             <div class="pub-teaser">
-                <video autoplay muted loop playsinline>
+                <video class="pub-teaser-bg" autoplay muted loop playsinline>
+                    <source src="/assets/teasers/2025-orbit.mp4" type="video/mp4">
+                </video>
+                <video class="pub-teaser-fg" autoplay muted loop playsinline>
                     <source src="/assets/teasers/2025-orbit.mp4" type="video/mp4">
                 </video>
             </div>
@@ -36,7 +39,8 @@ permalink: /publications/
 
         <div class="publication-item">
             <div class="pub-teaser">
-                <img src="/assets/teasers/2025-invblur.png" alt="Blur Recovery teaser">
+                <img class="pub-teaser-bg" src="/assets/teasers/2025-invblur.png" alt="">
+                <img class="pub-teaser-fg" src="/assets/teasers/2025-invblur.png" alt="Blur Recovery teaser">
             </div>
             <div class="pub-details">
                 <div class="pub-year">2025</div>
@@ -52,6 +56,21 @@ permalink: /publications/
                         <a href="https://maxmilite.github.io/rec-from-ultrafast-blur/static/paper.pdf" class="link-btn">[PDF]</a>
                         <a href="https://github.com/Maxmilite/rec-from-ultrafast-blur/" class="link-btn">[Code (Coming Soon)]</a>
                         <a href="https://maxmilite.github.io/rec-from-ultrafast-blur/" class="link-btn">[Project Page]</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pub-details">
+                <div class="pub-year">2025</div>
+                <div class="pub-content">
+                    <h3>WireSculptor: Interactive Guided Bending Workflow for Novice-Friendly Wire Sculpture Fabrication</h3>
+                    <div class="authors">
+                        Runze Xue, <strong>Fei Yu</strong>, Baohang Zhou, Jialu Wang, Fan Zhong, Qiong Zeng, Haisen Zhao
+                    </div>
+                    <div class="venue">
+                        An interesting project. Presented at ICXR 2025.
+                    </div>
+                    <div class="links">
+                        <a href="https://haisenzhao.github.io/paper/WireSculptor_ICXR2025.pdf" class="link-btn">[PDF]</a>
                     </div>
                 </div>
             </div>
@@ -99,6 +118,7 @@ permalink: /publications/
         overflow: hidden;
         background: rgba(15, 23, 42, 0.5);
         border: 1px solid rgba(59, 130, 246, 0.3);
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -111,16 +131,28 @@ permalink: /publications/
         }
     }
 
-    .pub-teaser img, .pub-teaser video {
+    .pub-teaser-bg {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        filter: blur(20px) saturate(1.2);
+        transform: scale(1.2);
+        z-index: 0;
+    }
+
+    .pub-teaser-fg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 1;
         transition: transform 0.3s ease;
         display: block;
     }
 
-    .publication-item:hover .pub-teaser img,
-    .publication-item:hover .pub-teaser video {
+    .publication-item:hover .pub-teaser-fg {
         transform: scale(1.05);
     }
 
